@@ -1,0 +1,479 @@
+$color-primary: #19191b
+$color-secondary: #21202c
+$color-third: #22213c
+$color-fourth: #31313d
+$color-fifth: #41405a
+
+$color-primaryB: #d3b047
+
+
+$sans: sans-serif
+
+$mrgn: 0
+$pdg: 0
+$cntr: center
+$rlt: relative
+$abs: absolute
+$mh: 100vh
+
+body
+  background: $color-primary
+  margin: $mrgn
+  padding: $pdg
+  justify-content: $cntr
+  align-items: $cntr
+  min-height: $mh
+  font-family: $sans
+
+header
+  display: flex
+  justify-content: $cntr
+  align-items: $cntr
+  min-height: 700px
+  font-weight: 700px
+  background: $color-secondary
+  margin: 0
+  padding: 0
+  
+  .container
+    width: 100%
+    height: 650px
+
+    .logo
+      display: flex
+      justify-content: $cntr
+      height: 150px
+      
+      img
+        width: 130px
+        height: 130px
+        padding: 10px
+        margin: auto
+        border-radius: 50%
+
+
+    h1
+      text-align: center
+      color: $color-primaryB
+      font-weight: 20px
+      font-size: 4em
+
+.icons
+  margin: 0
+  padding: 0
+  display: flex
+  justify-content: center
+  align-items: center
+  min-height: 50px
+  margin-top: 150px
+
+  ul      
+    margin: 0
+    padding: 0
+    display: flex
+
+    li
+      position: relative
+      list-style: none
+      width: 100px
+      height: 100px
+      margin: 0 10px
+      border-radius: 50%
+      box-sizing: border-box
+    
+    li::before,li::after
+      content: ''
+      position: absolute
+      top: 0
+      left: 0
+      width: 100%
+      height: 100%
+      background: #000
+      border-radius: 50%
+      filter: blur(10px)
+      opacity: 0
+      transition: 1s
+      z-index: 1
+
+    li::after
+      filter: blur(10px)
+
+    li:hover::before,li:hover::after
+      opacity: 1
+
+    li a
+      position: absolute
+      top: 10px
+      left: 10px
+      right: 10px
+      bottom: 10px
+      text-align: center
+      line-height: 80px
+      color: #fff
+      background: #000
+      font-size: 36px
+      border-radius: 50%
+      z-index: 20
+
+      .fa
+        text-shadow: 0 2px 5px rgba(0,0,0,.2)
+        transition: 0.5s
+        transform: rotateY(0deg) scale(0.8)
+        opacity: 0.2
+
+    li a:hover .fa
+      opacity: 1
+      transform: scale(1.2)
+
+    li:nth-child(1) a, li:nth-child(1)::before, li:nth-child(1)::after
+      background: linear-gradient(45deg,#d3b047,#468cd2)
+
+    li:nth-child(2) a, li:nth-child(2)::before, li:nth-child(2)::after
+      background: linear-gradient(45deg,#d3b047,#d24646)
+
+    li:nth-child(3) a, li:nth-child(3)::before, li:nth-child(3)::after
+      background: linear-gradient(45deg,#d3b047,#d246d2)
+
+nav
+  position: sticky
+  top: 0px
+  width: 100%
+  height: 50px
+  display: inline-block
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  justify-content: center
+  align-items: center
+  background: $color-third
+  border-bottom: solid 1px $color-primaryB
+  z-index: 20
+
+  a
+    position: relative
+    top: 16px
+    left: 0
+    right: 0
+    bottom: 0
+    padding: 16px 40px
+    text-decoration: none
+    color: #fff
+    background: $color-third
+    font-size: 16px
+    letter-spacing: 2px
+
+nav a:hover
+  background: #5f5cff
+  transition: 0.5s
+  transition-delay: 0.6s
+  color: $color-primaryB
+
+  span
+    position: absolute
+    display: block
+    background: #524dff
+
+a span:nth-child(1)
+  left: 0
+  bottom: 0
+  width: 1px
+  height: 100%
+  transform: scaleY(0)
+  transform-origin: top
+  transition: transform 0.25s
+
+a:hover span:nth-child(1)
+  transform: scaleY(1)
+  transform-origin: bottom
+  transition: transform 0.25s
+
+a span:nth-child(2)
+  left: 0
+  top: 0
+  width: 100%
+  height: 1px
+  transform: scaleX(0)
+  transform-origin: right
+  transition: transform 0.25s
+  transition-delay: 0.25s
+
+a:hover span:nth-child(2)
+  transform: scaleX(1)
+  transform-origin: left
+  transition: transform 0.25s
+  transition-delay: 0.25s
+
+a span:nth-child(3)
+  right: 0
+  top: 0
+  width: 1px
+  height: 100%
+  transform: scaleY(0)
+  transform-origin: bottom
+  transition: transform 0.25s
+  transition-delay: 0.25s
+
+a:hover span:nth-child(3)
+  transform: scaleY(1)
+  transform-origin: top
+  transition: transform 0.25s
+  transition-delay: 0.25s
+
+a span:nth-child(4)
+  right: 0
+  bottom: 0
+  width: 100%
+  height: 1px
+  transform: scaleX(0)
+  transform-origin: left
+  transition: transform 0.25s
+  transition-delay: 0.25s
+
+a:hover span:nth-child(4)
+  transform: scaleX(1)
+  transform-origin: right
+  transition: transform 0.25s
+  transition-delay: 0.25s
+
+aside
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  display: flex
+  justify-content: center
+  align-items: center
+  min-height: 100vh
+  background: linear-gradient(60deg, #41405a 50%,#31313d 20%)
+
+  .container
+    position: relative
+    width: 500px
+    
+    h2
+      color: $color-primaryB
+    
+    .skill
+      position: relative
+      display: flex
+      margin: 20px 0
+      padding: 15px 10px 18px
+      background: linear-gradient(#616161 0%, $color-secondary 10%, $color-primary)
+      overflow: hidden
+      border: 2px solid #000
+      border-radius: 5px
+      transition: 0.5s
+      
+  .container:hover .skill
+    opacity: 0.05
+  
+  .container .skill:hover
+    opacity: 1
+    transform: scale(1.1)
+
+  .container .skill::before
+    content: ''
+    position: absolute
+    top: 0
+    left: 0
+    width: 100%
+    height: 50%
+    background: rgba(255,255,255,.1)
+    z-index: 10
+
+  .container .skill .name
+    position: relative
+    padding: 0 5px
+    width: 110px
+    text-align: right
+    color: $color-primaryB
+    margin-top: -2px
+    text-transform: uppercase
+  
+  .container .skill .value
+    position: relative
+    padding: 0 5px
+    width: 40px
+    text-align: left
+    color: $color-primaryB
+    margin-top: -2px
+    text-transform: uppercase
+
+  .container .skill .percent
+    position: relative
+    width: calc(100% - 150px)
+    height: 20px
+    border-radius: 10px
+    background: #151515
+    box-shadow: inset 0 0 10px #000
+    overflow: hidden 
+  
+    .pogress
+      position: absolute
+      top: 0
+      left: 0
+      width: 70%
+      height: 100%
+      border-radius: 10px
+      background: #fff
+      box-shadow: inset 0 0 2px #000
+      animation: animate 4s ease-in-out forwards
+
+@keyframes animate
+  from
+    width: 0
+
+
+.container .skill:nth-child(2) .percent .pogress
+  background: linear-gradient(45deg,$color-primaryB,#d24646)
+
+.container .skill:nth-child(3) .percent .pogress
+  background: linear-gradient(45deg, $color-primaryB, #afd246)
+
+.container .skill:nth-child(4) .percent .pogress
+  background: linear-gradient(45deg, $color-primaryB, #46d28c)
+
+.container .skill:nth-child(5) .percent .pogress
+  background: linear-gradient(45deg, $color-primaryB, #468cd2)
+
+.container .skill:nth-child(6) .percent .pogress
+  background: linear-gradient(45deg, $color-primaryB, #8c46d2)
+
+.container .skill:nth-child(7) .percent .pogress
+  background: linear-gradient(45deg, $color-primaryB, #d2468c)
+
+
+article
+  display: flex
+  justify-content: center
+  align-items: center
+  flex-wrap: wrap
+  min-height: 100vh
+  
+
+
+  .containerC
+    display: flex
+    justify-content: center
+    max-width: 1200px
+    padding: 40px 0
+
+    .card
+      position: relative
+      min-width: 320px
+      height: 420px
+      box-shadow: inset 5px 5px 5px rgba(0,0,0,0.05),inset -5px -5px -5px rgba(255,255,255,0.5),5px 5px 5px rgba(0,0,0,0.05), -5px -5px -5px rgba(255,255,255,0.5)
+      border-radius: 15px
+      margin: 30px
+
+      .box
+        position: absolute
+        top: 20px
+        left: 20px
+        right: 20px
+        bottom: 20px
+        background: $color-secondary
+        box-shadow: 0 10px 20px rgba(0,0,0,0.1)
+        border-radius: 15px
+        display: flex
+        justify-content: center
+        align-items: center
+        transition: 0.5s
+        
+        .content
+          padding: 20px
+          text-align: center
+        
+          h2
+            position: absolute
+            top: -120px
+            right: 30px
+            font-size: 8em
+            color: rgba(0, 0, 0,0.2)
+            transition: 0.5s
+        
+          h3
+           color: #9897b5
+
+          p
+            font-size: 1em
+            font-weight: 300px
+            color: #9897b5
+            z-index: 10
+            transition: 0.5s
+
+          a
+            position: relative
+            display: inline-block
+            padding: 8px 20px
+            color: #9897b5
+            background: $color-primary
+            margin-top: 15px
+            border-radius: 20px
+            text-decoration: none
+            font-weight: 400px
+            box-shadow: 0 10 20px rgba(0,0,0,0.2)
+
+
+.containerC .card:hover .box
+  transform: translateY(-50px)
+  box-shadow: 0 10px 40px rgba(0,0,0,0.2)
+  background: linear-gradient(45deg, $color-fourth, $color-fifth)
+
+.containerC .card:hover .box .content h2
+  color: rgba(0, 0, 0,0.5)
+
+.containerC .card:hover .box .content h3
+  font-size: 1.1em
+  color: $color-primaryB
+  z-index: 10
+  transition: 0.5s
+
+.containerC .card:hover .box .content a
+  background: $color-primaryB
+  color: $color-primary
+
+footer
+  display: flex
+  align-items: center
+  background: $color-secondary
+  color: #9897b5
+  flex-wrap: wrap
+
+  h3
+    color: $color-primaryB
+
+  .info
+    margin: 5px 20px
+    height: 100%
+    max-width: 400px 
+
+  .terminos
+    text-align: center
+    justify-content: center
+    align-items: center
+    height: 100%
+    width: 200px
+    margin: 5px 10px
+
+    a
+      color: #9897b5
+      padding: 10px
+
+  
+  .infoCt
+    position: relative
+    top: 0
+    left: 70px 
+    align-items: center
+    height: 100%
+    width: 200px
+    margin: 5px 10px
+    padding: 5px 5px
+
+    i
+      color: $color-primaryB
+      font-size: 2em
+
+    p
+      padding-left: 20px
+  
